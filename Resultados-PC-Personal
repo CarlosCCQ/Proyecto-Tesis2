@@ -1,0 +1,35 @@
+Para computadora personal:
+
+(venv) jhan@ccant:~/Documentos/Proyecto-Tesis-II 
+ $ mpirun -np 4 venv/bin/python image_mpi.py images10k out10k
+[Nodo 3] Tiempo: 0.8300 segundos, imágenes: 2500
+[Nodo 0] Tiempo: 0.8516 segundos, imágenes: 2500
+[Nodo 2] Tiempo: 0.8655 segundos, imágenes: 2500
+[Nodo 1] Tiempo: 0.8684 segundos, imágenes: 2500
+
+Procesamiento completado.
+Total de imágenes: 10000
+Nodos utilizados: 4
+(venv) jhan@ccant:~/Documentos/Proyecto-Tesis-II 
+ $ mpirun -np 4 venv/bin/python image_mpi.py images30k out30k
+[Nodo 3] Tiempo: 2.1492 segundos, imágenes: 7500
+[Nodo 1] Tiempo: 2.2182 segundos, imágenes: 7500
+[Nodo 0] Tiempo: 2.2341 segundos, imágenes: 7500
+[Nodo 2] Tiempo: 2.2305 segundos, imágenes: 7500
+
+Procesamiento completado.
+Total de imágenes: 30000
+Nodos utilizados: 4
+(venv) jhan@ccant:~/Documentos/Proyecto-Tesis-II 
+ $ mpirun -np 4 venv/bin/python image_mpi.py images60k out60k
+[Nodo 2] Tiempo: 4.8297 segundos, imágenes: 15000
+[Nodo 3] Tiempo: 4.8788 segundos, imágenes: 15000
+[Nodo 1] Tiempo: 4.8948 segundos, imágenes: 15000
+[Nodo 0] Tiempo: 5.2535 segundos, imágenes: 15000
+
+Procesamiento completado.
+Total de imágenes: 60000
+Nodos utilizados: 4
+
+Para Nube AWS:
+
