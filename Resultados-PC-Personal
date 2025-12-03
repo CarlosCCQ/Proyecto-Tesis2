@@ -32,4 +32,53 @@ Total de imágenes: 60000
 Nodos utilizados: 4
 
 Para Nube AWS:
+[ec2-user@ip-10-0-1-43 ~]$ mpirun -n 4 -H localhost:2,$WORKER:2 python3 image_mpi.py images10k resultados_10k
+[Nodo 0] Tiempo: 0.3202 segundos, imágenes: 2500
+[Nodo 1] Tiempo: 0.3205 segundos, imágenes: 2500
+[Nodo 3] Tiempo: 0.3385 segundos, imágenes: 2500
+[Nodo 2] Tiempo: 0.3393 segundos, imágenes: 2500
 
+Procesamiento completado.
+Total de imágenes: 10000
+Nodos utilizados: 4
+[ec2-user@ip-10-0-1-43 ~]$ 
+
+[ec2-user@ip-10-0-1-43 ~]$ mpirun -n 4 -H localhost:2,$WORKER:2 python3 image_mpi.py images30k resultados_30k
+[Nodo 3] Tiempo: 1.0363 segundos, imágenes: 7500
+[Nodo 2] Tiempo: 1.0392 segundos, imágenes: 7500
+[Nodo 1] Tiempo: 1.2941 segundos, imágenes: 7500
+[Nodo 0] Tiempo: 1.2890 segundos, imágenes: 7500
+
+Procesamiento completado.
+Total de imágenes: 30000
+Nodos utilizados: 4
+
+[ec2-user@ip-10-0-1-43 ~]$ mpirun -n 4 -H localhost:2,$WORKER:2 python3 image_mpi.py images60k resultados_60k
+[Nodo 3] Tiempo: 2.5654 segundos, imágenes: 15000
+[Nodo 2] Tiempo: 2.6008 segundos, imágenes: 15000
+[Nodo 0] Tiempo: 2.6508 segundos, imágenes: 15000
+[Nodo 1] Tiempo: 2.6795 segundos, imágenes: 15000
+
+Procesamiento completado.
+Total de imágenes: 60000
+Nodos utilizados: 4
+
+[ec2-user@ip-10-0-1-43 ~]$ ping -c 10 $WORKER
+PING 10.0.1.225 (10.0.1.225) 56(84) bytes of data.
+64 bytes from 10.0.1.225: icmp_seq=1 ttl=127 time=0.341 ms
+64 bytes from 10.0.1.225: icmp_seq=2 ttl=127 time=0.231 ms
+64 bytes from 10.0.1.225: icmp_seq=3 ttl=127 time=0.547 ms
+64 bytes from 10.0.1.225: icmp_seq=4 ttl=127 time=0.757 ms
+64 bytes from 10.0.1.225: icmp_seq=5 ttl=127 time=0.244 ms
+64 bytes from 10.0.1.225: icmp_seq=6 ttl=127 time=0.278 ms
+64 bytes from 10.0.1.225: icmp_seq=7 ttl=127 time=0.277 ms
+64 bytes from 10.0.1.225: icmp_seq=8 ttl=127 time=0.209 ms
+64 bytes from 10.0.1.225: icmp_seq=9 ttl=127 time=0.271 ms
+64 bytes from 10.0.1.225: icmp_seq=10 ttl=127 time=0.253 ms
+
+La infraestructura desplegada en AWS (región us-east-1) demostró 
+una latencia de red extremadamente baja, con un promedio aproximado
+de 0.3 ms entre nodos. Esto confirma que las instancias se encuentran 
+en la misma Zona de Disponibilidad (Availability Zone), lo cual es óptimo 
+para cargas de trabajo HPC acopladas como el procesamiento distribuido de 
+imágenes con MPI, minimizando el overhead de comunicación.
