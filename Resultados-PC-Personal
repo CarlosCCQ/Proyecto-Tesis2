@@ -79,33 +79,6 @@ PING 10.0.1.225 (10.0.1.225) 56(84) bytes of data.
 
 Salida en PHC cluster:
 
-sem2@worker0:~/proyecto_mpi$ mpirun -np 7 --hostfile hosts python3 image_mpi.py images10k output10k
-[Nodo 4] Tiempo: 0.1382 segundos, imágenes: 1428
-[Nodo 3] Tiempo: 0.1396 segundos, imágenes: 1428
-[Nodo 1] Tiempo: 0.1399 segundos, imágenes: 1428
-[Nodo 6] Tiempo: 0.1423 segundos, imágenes: 1432
-[Nodo 2] Tiempo: 0.1466 segundos, imágenes: 1428
-[Nodo 5] Tiempo: 0.1478 segundos, imágenes: 1428
-[Nodo 0] Tiempo: 0.3237 segundos, imágenes: 1428
-
-sem2@worker0:~/proyecto_mpi$ mpirun -np 7 --hostfile hosts python3 image_mpi.py images30k output30k
-[Nodo 2] Tiempo: 0.5218 segundos, imágenes: 4285
-[Nodo 0] Tiempo: 0.8433 segundos, imágenes: 4285
-[Nodo 5] Tiempo: 1.1675 segundos, imágenes: 4285
-[Nodo 3] Tiempo: 1.4557 segundos, imágenes: 4285
-[Nodo 1] Tiempo: 1.9760 segundos, imágenes: 4285
-[Nodo 4] Tiempo: 2.2062 segundos, imágenes: 4285
-[Nodo 6] Tiempo: 4.2736 segundos, imágenes: 4290
-
-sem2@worker0:~/proyecto_mpi$ mpirun -np 7 --hostfile hosts python3 image_mpi.py images60k output60k
-[Nodo 5] Tiempo: 0.8498 segundos, imágenes: 8571
-[Nodo 2] Tiempo: 0.9074 segundos, imágenes: 8571
-[Nodo 6] Tiempo: 1.4200 segundos, imágenes: 8574
-[Nodo 3] Tiempo: 1.6292 segundos, imágenes: 8571
-[Nodo 1] Tiempo: 1.6344 segundos, imágenes: 8571
-[Nodo 0] Tiempo: 1.7138 segundos, imágenes: 8571
-[Nodo 4] Tiempo: 2.0722 segundos, imágenes: 8571
-
 sem2@worker0:~/proyecto_mpi$ time mpirun -np 7 --hostfile hosts python3 image_mpi.py images60k output60k
 [Nodo 1] Tiempo: 0.8012 segundos, imágenes: 8571
 [Nodo 5] Tiempo: 0.8141 segundos, imágenes: 8571
