@@ -31,7 +31,6 @@ Procesamiento completado.
 Total de imágenes: 60000
 Nodos utilizados: 4
 
-
 Para Nube AWS:
 [ec2-user@ip-10-0-1-43 ~]$ mpirun -n 4 -H localhost:2,$WORKER:2 python3 image_mpi.py images10k resultados_10k
 [Nodo 0] Tiempo: 0.3202 segundos, imágenes: 2500
